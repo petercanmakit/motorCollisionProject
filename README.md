@@ -12,6 +12,6 @@ Big data project
 
 2. Run command
 
-			python dataclean [year] [K]
+			python dataclean.py [year] [K]
 			
 			#year = 2012 ~ 2026, K is number of centers
