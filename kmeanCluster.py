@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Loads data.
     dataset = spark.read.format("libsvm").load(filename)
     
-    print(dataset)
+    #print(dataset)
     # Trains a k-means model.
     kmeans = KMeans().setK(numCenter).setSeed(1)
     model = kmeans.fit(dataset)
@@ -44,6 +44,8 @@ if __name__ == "__main__":
     spark.stop()
     
     fhand = codecs.open('where.js','w', "utf-8")
+    fhand.write("year = "+str(year)+';\n')
+    fhand.write("numCenters = "+str(numCenter)+';\n')
     fhand.write("myData = [\n")
     count = 0
     for row in centers :
