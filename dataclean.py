@@ -22,7 +22,7 @@ if conn != None:
 	WHERE c.cDATE >= %s AND c.cDATE < %s;
 	''',(str(year)+'-01-01',str(year+1)+'-01-01'))
 	
-	filename = 'T'+str(year)+'.txt'
+	filename = './location/'+'T'+str(year)+'.txt'
 	print filename
 	f = open(filename,'w')	
 	i = -1
@@ -38,5 +38,5 @@ if conn != None:
 	try: os.system("hadoop dfs -put " + filename)
 	except: print 'file exists'
 	os.system("spark-submit kmeanCluster.py " + str(year) + " " + str(numCenter) )
-	os.system("open where.html")
+	os.system("open ./mapmarker/where.html")
 conn.close()	

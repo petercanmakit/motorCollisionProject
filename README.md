@@ -8,7 +8,7 @@ Big data project
 
 1. Down load dataset
 
-	● Go to NYC Open Data to down load dataset exported as .csv , https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95, and put it under this project folder.
+	● Go to NYC Open Data to download dataset exported as .csv , https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95, and put it under this project folder.
 
 2. Run command
 

@@ -13,7 +13,8 @@ if __name__ == "__main__":
 
     year = int(sys.argv[1])
     numCenter = int(sys.argv[2])
-    filename = 'T'+str(year)+'.txt'
+    print(year,numCenter)
+    filename = './location/T'+str(year)+'.txt'
     spark = SparkSession\
         .builder\
         .appName("KMeansExample")\
@@ -43,7 +44,7 @@ if __name__ == "__main__":
 
     spark.stop()
     
-    fhand = codecs.open('where.js','w', "utf-8")
+    fhand = codecs.open('./mapmarker/where.js','w', "utf-8")
     fhand.write("year = "+str(year)+';\n')
     fhand.write("numCenters = "+str(numCenter)+';\n')
     fhand.write("myData = [\n")
