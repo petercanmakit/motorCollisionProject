@@ -18,6 +18,11 @@ Part 2: K-mean Clustering for locations of high posibility of accidents
 
 2. Run command
 
-			python dataclean.py [year] [K]
+			python dataclean.py
 			
-			#year = 2012 ~ 2026, K is number of centers
+			#Then follow the instruction to insert year, borough, type of accidents and number of centers (K) you want to cluster.
+			
+Here is an example of year 2016, manhattan, type = all, K = 100
+			
+			![Alt text](./pics/SH1.jpg?raw=true "Overview")
+			![Alt text](./pics/SH2.jpg?raw=true "Sections around Columbia University")
