@@ -1,5 +1,11 @@
 Big data project
 
+Part 1: Statistics Results From Hive Processing
+
+Please refer file Part 1.
+
+Part 2: K-mean Clustering for locations of high posibility of accidents
+
 0. Environment
 
 	● OS X, Java 1.8.0_111, python 2.7, Hadoop 2.7.3, Spark 2.0.1, MySQL
