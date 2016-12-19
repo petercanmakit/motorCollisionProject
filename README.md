@@ -24,5 +24,5 @@ Part 2: K-mean Clustering for locations of high posibility of accidents
 			
 Here is an example of year 2016, manhattan, type = all, K = 100
 			
-	![Overview](/pics/SH1.png?raw=true "Overview")
-	![Sections around Columbia University](/pics/SH2.png?raw=true "Sections around Columbia University")
+	![Overview](./pics/SH1.png)
+	![Sections around Columbia University](./pics/SH2.png)
