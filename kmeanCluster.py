@@ -15,8 +15,9 @@ if __name__ == "__main__":
     type = sys.argv[2]
     borough = sys.argv[3]
     numCenter = int(sys.argv[4])
-    print(year,type,borough,numCenter)
-    filename = './location/'+'T'+str(year)+borough.replace('_','')+type+'.txt'
+    totalRecords = int(sys.argv[5])
+    print(year,type,borough,numCenter,totalRecords)
+    filename = '/location/'+'T'+str(year)+borough.replace(' ','_')+type+'.txt'
     spark = SparkSession\
         .builder\
         .appName("KMeansExample")\
@@ -24,7 +25,7 @@ if __name__ == "__main__":
 
     # $example on$
     # Loads data.
-    dataset = spark.read.format("libsvm").load(filename)
+    dataset = spark.read.format("libsvm").load("."+filename) #hdfs replace '.' with correct url 'hdfs:/usr/collision'
     
     #print(dataset)
     # Trains a k-means model.
@@ -51,6 +52,7 @@ if __name__ == "__main__":
     fhand.write("borough = '"+borough+"';\n")
     fhand.write("type = '"+type+"';\n")
     fhand.write("numCenters = "+str(numCenter)+';\n')
+    fhand.write("totalRecords = "+str(totalRecords)+';\n')
     fhand.write("myData = [\n")
     count = 0
     for row in centers :

@@ -64,10 +64,11 @@ if conn != None:
 		''',(str(year)+'-01-01',str(year+1)+'-01-01',injure,kill,borough))		
 
 	print 'There are ', cur.rowcount, 'accidents being analyzed. Please wait for seconds.'
-	if numCenter>cur.rowcount:
-		numCenter = cur.rowcount	
+	totalRecords = int(cur.rowcount)
+	if numCenter>totalRecords:
+		numCenter = totalRecords	
 		print "K>#records, change K to no need for clustering."
-	filename = './location/'+'T'+str(year)+borough.replace('_','')+type+'.txt'
+	filename = './location/'+'T'+str(year)+borough.replace(' ','_')+type+'.txt'
 	print 'Saving to file:', filename
 	f = open(filename,'w')	
 	i = -1
@@ -81,10 +82,10 @@ if conn != None:
 			f.write(ele)
 	f.close()
 	print 'Try to put on hadoop.'
-	try: os.system("hadoop dfs -put " + filename)
+	try: os.system("hadoop dfs -put " + filename +' /usr/collision/location')
 	except: print "file exists,don't have to put it again"
 	print 'Start clustering with spark.'
-	os.system("spark-submit kmeanCluster.py " + str(year) + " " + str(type)  + " " + str(borough)  + " " + str(numCenter) )
+	os.system("spark-submit kmeanCluster.py " + str(year) + " " + str(type)  + " " + str(borough).replace(' ','_')  + " " + str(numCenter) + " " +str(totalRecords))
 	print 'Check on maps.'
 	os.system("open ./mapmarker/where.html")
 conn.close()	
