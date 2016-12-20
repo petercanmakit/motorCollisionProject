@@ -14,15 +14,28 @@
     <script>
 
       function initialize() {
-        alert("To see the title of a marker, hover over the marker but don't click.");
-        var myLatlng = new google.maps.LatLng(37.39361,-122.099263)
+        alert("Here are the centers that have been clustered.");
+        var myLatlng = new google.maps.LatLng(40.806514, -73.963702)
         var mapOptions = {
-          zoom: 3,
+          zoom: 11,
           center: myLatlng,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+		//color
+		var pinColor = "4DA6FA"; //blue
+    	var pinImageBlue = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        	new google.maps.Size(21, 34),
+        	new google.maps.Point(0,0),
+        	new google.maps.Point(10, 34));
+        
+		var pinColor = "FE7569"; //red
+    	var pinImageRed = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        	new google.maps.Size(21, 34),
+        	new google.maps.Point(0,0),
+        	new google.maps.Point(10, 34));        
+        
         i = 0;
         var markers = [];
         for ( pos in myData ) {
@@ -34,6 +47,7 @@
             var marker = new google.maps.Marker({
                 position: newLatlng,
                 map: map,
+                icon: pinImageRed,
                 title: row[2]
             });
             markers.push(marker);
