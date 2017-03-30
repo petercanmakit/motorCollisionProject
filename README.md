@@ -1,10 +1,6 @@
 Big data project
 
-Part 1: Statistics Results From Hive Processing
-
-	● Please refer file Part 1.
-
-Part 2: K-mean Clustering for locations of high posibility of accidents
+K-mean Clustering for locations of high posibility of accidents
 
 0. Environment
 
