@@ -10,7 +10,7 @@ import re
 import sys
 
 if __name__ == "__main__":
-
+	# command line argument passing
     year = int(sys.argv[1])
     type = sys.argv[2]
     borough = sys.argv[3]
@@ -23,11 +23,9 @@ if __name__ == "__main__":
         .appName("KMeansExample")\
         .getOrCreate()
 
-    # $example on$
     # Loads data.
     dataset = spark.read.format("libsvm").load("."+filename) #hdfs replace '.' with correct url 'hdfs:/usr/collision'
-    
-    #print(dataset)
+
     # Trains a k-means model.
     kmeans = KMeans().setK(numCenter).setSeed(1)
     model = kmeans.fit(dataset)
@@ -46,7 +44,8 @@ if __name__ == "__main__":
     # $example off$
 
     spark.stop()
-    
+
+	# write centers into where.js
     fhand = codecs.open('./mapmarker/where.js','w', "utf-8")
     fhand.write("year = "+str(year)+';\n')
     fhand.write("borough = '"+borough+"';\n")
