@@ -26,6 +26,6 @@ Here is an example of year 2016, manhattan, type = all, K = 100
 
 ![image](./pics/SH2.png "Sections around Columbia University")
 
-## Youtube link
+## 4. Youtube link
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/SWS3jXV6XVg/0.jpg)](http://www.youtube.com/watch?v=SWS3jXV6XVg "Big Data Analytics Project: Motor Collisions in NYC")
