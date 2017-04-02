@@ -1,4 +1,5 @@
 # K-mean cluster algorithm from pySpark
+# also put center data into whrere.js file for visualization
 
 from __future__ import print_function
 
