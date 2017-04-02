@@ -1,3 +1,5 @@
+# to dump raw csv data into MySQL database
+import csv
 import csv
 from sqlalchemy import *
 
