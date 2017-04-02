@@ -12,11 +12,11 @@
 
 ## 2. Run command
 
-			python dump2mysql.py
+	python dump2mysql.py
 			
-			python run.py
+	python run.py
 			
-			#Then follow the instruction to insert year, borough, type of accidents and number of centers (K) you want to cluster.
+	#Then follow the instruction to insert year, borough, type of accidents and number of centers (K) you want to cluster.
 			
 ## 3. Example
 
