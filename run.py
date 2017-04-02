@@ -1,3 +1,7 @@
+# Take user input and gather data from database
+# Pass pareameters and data array to K-mean cluster algorithm
+# Finally open the whrere.html for user
+
 import os,sys
 from sqlalchemy import *
 
